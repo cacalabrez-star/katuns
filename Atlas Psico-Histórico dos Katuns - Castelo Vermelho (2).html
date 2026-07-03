@@ -10,45 +10,56 @@
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
-            background-color: #0a0a0a;
-            color: #f5f5f5;
+            background: #141312;
+            color: #e8e1d4;
             font-family: 'IBM Plex Sans Condensed', sans-serif;
             padding: 10px;
             max-width: 1600px;
             margin: 0 auto;
         }
         #cabecalho {
-            border: 2px solid #D91F26;
+            border: 1px solid #444;
             border-bottom: none;
             text-align: center;
-            padding: 15px 20px 8px 20px;
-            background-color: #0a0a0a;
+            padding: 10px 20px 6px 20px;
+            background: linear-gradient(180deg, #151413, #0f0e0d);
         }
         #cabecalho h1 {
-            font-size: 2.8rem;
-            letter-spacing: 10px;
+            font-size: 2.25rem;
+            letter-spacing: 8px;
             font-weight: 700;
-            color: #D91F26;
+            color: #9f3430;
             text-shadow: 0 0 30px rgba(217,31,38,0.3);
         }
         #cabecalho h2 {
-            font-size: 2rem;
-            letter-spacing: 8px;
-            color: #f5f5f5;
-            margin-top: 2px;
+            font-size: 1.55rem;
+            letter-spacing: 6px;
+            color: #e8e1d4;
+            margin-top: 1px;
+        }
+        #cabecalho h2::after {
+            content: "Pesquisa Estrutural do Castelo Vermelho\A José Argüelles + Ampliação da Pesquisa";
+            display: block;
+            white-space: pre;
+            margin-top: 4px;
+            font-size: 0.75rem;
+            line-height: 1.35;
+            letter-spacing: 2px;
+            color: #b9afa0;
+            font-weight: 400;
         }
         .subtitulo-data {
-            font-size: 1.6rem;
-            color: #F5C400;
-            margin-top: 4px;
+            font-size: 1.2rem;
+            color: #c5a64a;
+            margin-top: 2px;
             font-weight: 700;
             letter-spacing: 4px;
         }
         .ilustracao-baktun {
             width: 85%;
             margin: 8px auto;
-            padding-top: 8px;
-            border-top: 2px solid #D91F26;
+            padding-top: 5px;
+            border-top: 1px solid #444;
         }
         .linha-baktun-escala {
             display: flex;
@@ -57,46 +68,46 @@
             color: #f5f5f5;
             font-weight: 700;
         }
-        .marcador-baktun-zero { color: #D91F26; }
-        .marcador-baktun-um { color: #F5C400; }
+        .marcador-baktun-zero { color: #9f3430; }
+        .marcador-baktun-um { color: #c5a64a; }
         .marcador-baktun-linha { color: #666; letter-spacing: 4px; }
         .faixa-ondas {
             display: grid;
             grid-template-columns: 140px repeat(4, 1fr);
-            border: 2px solid #D91F26;
+            border: 1px solid #444;
             border-top: none;
             font-weight: 700;
             text-transform: uppercase;
             font-size: 1rem;
         }
         .faixa-ondas .canto-vazio {
-            border-right: 2px solid #D91F26;
-            background: #0a0a0a;
+            border-right: 1px solid #444;
+            background: #11100f;
         }
         .titulo-onda {
-            padding: 8px 4px;
+            padding: 6px 4px;
             text-align: center;
             border-right: 1px solid #333;
             font-size: 0.95rem;
             letter-spacing: 1px;
         }
         .titulo-onda:last-child { border-right: none; }
-        .titulo-onda.dragao { background-color: #D91F26; color: #0a0a0a; font-size: 1.1rem; }
-        .titulo-onda.mago { background-color: #f5f5f5; color: #0a0a0a; }
-        .titulo-onda.mao { background-color: #0067B1; color: #f5f5f5; }
-        .titulo-onda.sol { background-color: #F5C400; color: #0a0a0a; }
-        .titulo-onda .sub { display: block; font-size: 0.7rem; font-weight: 400; opacity: 0.8; }
+        .titulo-onda.dragao { background-color: #8d3b36; color: #16110f; font-size: 1.05rem; }
+        .titulo-onda.mago { background-color: #d8d2c5; color: #16110f; }
+        .titulo-onda.mao { background-color: #436f86; color: #f0eadf; }
+        .titulo-onda.sol { background-color: #b79d52; color: #16110f; }
+        .titulo-onda .sub { display: block; font-size: 0.68rem; font-weight: 400; opacity: 0.82; letter-spacing: 0.5px; }
         .painel-principal {
             display: grid;
             grid-template-columns: 140px 1fr;
-            border: 2px solid #D91F26;
+            border: 1px solid #444;
             border-top: none;
         }
         .coluna-selos {
             display: grid;
             grid-template-rows: repeat(20, auto);
-            border-right: 2px solid #D91F26;
-            background: #0a0a0a;
+            border-right: 1px solid #444;
+            background: #11100f;
         }
         .bloco-selo {
             display: flex;
@@ -120,90 +131,95 @@
             margin-right: 6px;
         }
         .bloco-selo .nome-selo { font-size: 0.7rem; line-height: 1.2; }
-        .bloco-selo.vermelho { border-left: 6px solid #D91F26; }
+        .bloco-selo.vermelho { border-left: 6px solid #9f3430; }
         .bloco-selo.branco { border-left: 6px solid #f5f5f5; }
-        .bloco-selo.azul { border-left: 6px solid #0067B1; }
-        .bloco-selo.amarelo { border-left: 6px solid #F5C400; }
+        .bloco-selo.azul { border-left: 6px solid #3e6f91; }
+        .bloco-selo.amarelo { border-left: 6px solid #c5a64a; }
         .grade-katuns {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             grid-template-rows: repeat(20, auto);
+            gap: 8px;
+            padding: 8px;
+            background: #11100f;
         }
         .celula-katun {
-            border-right: 1px solid #222;
-            border-bottom: 1px solid #222;
-            padding: 6px 8px;
+            border: 1px solid #444;
+            padding: 8px 9px;
             min-height: 80px;
             display: flex;
             flex-direction: column;
             justify-content: flex-start;
-            gap: 2px;
+            gap: 3px;
         }
-        .celula-katun:nth-child(4n) { border-right: none; }
+        .celula-katun:nth-child(4n) { border-right: 1px solid #444; }
         
         /* CORES DAS ONDAS */
-        .celula-katun.onda-dragao { background-color: #1a0808; border-left: 4px solid #D91F26; }
-        .celula-katun.onda-mago { background-color: #1a1a1a; border-left: 4px solid #f5f5f5; }
-        .celula-katun.onda-mao { background-color: #08101a; border-left: 4px solid #0067B1; }
-        .celula-katun.onda-sol { background-color: #1a1808; border-left: 4px solid #F5C400; }
+        .celula-katun.onda-dragao { background: linear-gradient(180deg, #171211, #0d0b0a); border-left: 3px solid #8d3b36; }
+        .celula-katun.onda-mago { background: linear-gradient(180deg, #181716, #0d0d0c); border-left: 3px solid #bdb7aa; }
+        .celula-katun.onda-mao { background: linear-gradient(180deg, #11161a, #090d10); border-left: 3px solid #436f86; }
+        .celula-katun.onda-sol { background: linear-gradient(180deg, #19160d, #0d0b07); border-left: 3px solid #b79d52; }
         
         .katun-topo {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-bottom: 2px solid #D91F26;
+            border-bottom: 1px solid #444;
             padding-bottom: 3px;
-            margin-bottom: 4px;
+            margin-bottom: 5px;
         }
         .celula-katun.onda-mago .katun-topo { border-bottom-color: #f5f5f5; }
-        .celula-katun.onda-mao .katun-topo { border-bottom-color: #0067B1; }
-        .celula-katun.onda-sol .katun-topo { border-bottom-color: #F5C400; }
+        .celula-katun.onda-mao .katun-topo { border-bottom-color: #3e6f91; }
+        .celula-katun.onda-sol .katun-topo { border-bottom-color: #c5a64a; }
         
         .katun-id {
             font-weight: 700;
-            font-size: 1.1rem;
+            font-size: 1.18rem;
             flex-shrink: 0;
         }
-        .celula-katun.onda-dragao .katun-id { color: #D91F26; }
+        .celula-katun.onda-dragao .katun-id { color: #9f3430; }
         .celula-katun.onda-mago .katun-id { color: #f5f5f5; }
-        .celula-katun.onda-mao .katun-id { color: #0067B1; }
-        .celula-katun.onda-sol .katun-id { color: #F5C400; }
+        .celula-katun.onda-mao .katun-id { color: #3e6f91; }
+        .celula-katun.onda-sol .katun-id { color: #c5a64a; }
         
         .katun-arguelles {
             font-weight: 700;
-            font-size: 1rem;
+            font-size: 0.92rem;
             text-transform: uppercase;
             text-align: right;
             margin-left: 4px;
         }
-        .celula-katun.onda-dragao .katun-arguelles { color: #D91F26; }
+        .celula-katun.onda-dragao .katun-arguelles { color: #9f3430; }
         .celula-katun.onda-mago .katun-arguelles { color: #f5f5f5; }
-        .celula-katun.onda-mao .katun-arguelles { color: #0067B1; }
-        .celula-katun.onda-sol .katun-arguelles { color: #F5C400; }
+        .celula-katun.onda-mao .katun-arguelles { color: #3e6f91; }
+        .celula-katun.onda-sol .katun-arguelles { color: #c5a64a; }
         
         .katun-pesquisa {
-            font-size: 0.75rem;
-            font-style: italic;
-            line-height: 1.3;
-            color: #f5f5f5;
+            font-size: 11px;
+            font-style: normal;
+            line-height: 1.35;
+            color: #d8d1c3;
+            letter-spacing: 0.1px;
         }
         .katun-processo {
-            font-size: 0.65rem;
-            color: #88ccff;
+            font-size: 0.62rem;
+            color: #d6c48a;
             text-transform: uppercase;
             font-weight: 700;
-            margin-top: 2px;
-            border-top: 1px solid #333;
-            padding-top: 3px;
+            margin-top: auto;
+            border-top: 1px solid #444;
+            padding: 4px 5px 2px;
+            background: rgba(214, 196, 138, 0.07);
+            letter-spacing: 0.45px;
         }
         #rodape {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 16px;
-            border: 2px solid #D91F26;
+            border: 1px solid #444;
             border-top: none;
-            padding: 12px 16px;
-            background: #0a0a0a;
+            padding: 10px 16px;
+            background: linear-gradient(180deg, #151413, #0f0e0d);
         }
         .caixa-editorial {
             font-size: 0.75rem;
@@ -218,9 +234,9 @@
             margin-bottom: 3px;
             font-weight: 700;
         }
-        .caixa-editorial h3.vermelho { color: #D91F26; }
-        .caixa-editorial h3.azul { color: #0067B1; }
-        .caixa-editorial h3.amarelo { color: #F5C400; }
+        .caixa-editorial h3.vermelho { color: #9f3430; }
+        .caixa-editorial h3.azul { color: #3e6f91; }
+        .caixa-editorial h3.amarelo { color: #c5a64a; }
         @media (max-width: 1200px) {
             .painel-principal { grid-template-columns: 110px 1fr; }
             .bloco-selo { font-size: 0.6rem; min-height: 65px; padding: 2px 2px 2px 4px; }
@@ -303,10 +319,10 @@
         </div>
         <div class="faixa-ondas">
             <div class="canto-vazio"></div>
-            <div class="titulo-onda dragao">🐉 Dragão <span class="sub">Katuns 1-13</span></div>
-            <div class="titulo-onda mago">🧙 Mago <span class="sub">Katuns 14-26</span></div>
-            <div class="titulo-onda mao">✋ Mão <span class="sub">Katuns 27-39</span></div>
-            <div class="titulo-onda sol">☀️ Sol <span class="sub">Katuns 40-52</span></div>
+            <div class="titulo-onda dragao">DRAGÃO <span class="sub">Origem das Civilizações</span></div>
+            <div class="titulo-onda mago">MAGO <span class="sub">Centralização Política</span></div>
+            <div class="titulo-onda mao">MÃO <span class="sub">Monumentalização</span></div>
+            <div class="titulo-onda sol">SOL <span class="sub">Consolidação Cultural</span></div>
         </div>
     </header>
 
@@ -338,16 +354,16 @@
 
     <footer id="rodape">
         <div class="caixa-editorial">
-            <h3 class="vermelho">🟥 Castelo Vermelho</h3>
-            <p>Inicia a jornada cronológica planetária da história humana documentada. Estabelece as bases da civilização através do surgimento da escrita dinástica e arquitetura primordial.</p>
+            <h3 class="vermelho">Fontes</h3>
+            <p>José Argüelles – Earth Ascending</p>
         </div>
         <div class="caixa-editorial">
-            <h3 class="azul">🌍 Processos Históricos</h3>
-            <p>Análise temporal síncrona englobando o Alto e Baixo Egito, a evolução proto-urbana mesopotâmica em Uruk e Jemdet Nasr, as fases megalíticas e as civilizações do Vale do Indo.</p>
+            <h3 class="azul">Pesquisa</h3>
+            <p>Pesquisa colaborativa do Grupo de Estudos da Lei do Tempo</p>
         </div>
         <div class="caixa-editorial">
-            <h3 class="amarelo">📜 Legenda</h3>
-            <p>Ordenação matricial contínua baseada estritamente no Tear do Tzolkin: 20 linhas de Selos Solares intersectadas por 4 Ondas Encantadas de 13 Katuns lineares.</p>
+            <h3 class="amarelo">Edição</h3>
+            <p>Atlas Psico-Histórico dos Katuns – Versão Experimental</p>
         </div>
     </footer>
 
@@ -356,58 +372,58 @@
         // DADOS COMPLETOS DOS 52 KATUNS
         // ============================================================
         var bancoDadosKatuns = [
-            { katun: 1,  arguelles: "UNIFICAÇÃO", pesq: "🇪🇬 Narmer e I Dinastia • 🇮🇶 Uruk/Jemdet Nasr • 🇮🇳 Harappano inicial • 🇬🇧 Stonehenge I", proc: "Formação estatal; escrita; urbanização" },
-            { katun: 2,  arguelles: "NARMER", pesq: "🇪🇬 Hor-Aha/Mênfis • 🇮🇶 Jemdet Nasr • 🇮🇳 Harappa inicial • 🇨🇳 Liangzhu • 🇬🇧 megalitos", proc: "Consolidação administrativa e agrícola" },
-            { katun: 3,  arguelles: "MEMPHIS FOUND.", pesq: "🇪🇬 Djer e Estado faraônico • 🇮🇶 Dinástico Arcaico I • 🇮🇳 Harappa inicial • 🇨🇳 Liangzhu", proc: "Expansão urbana e comércio regional" },
-            { katun: 4,  arguelles: "URUK URBANO", pesq: "🇪🇬 Djer/Djet • 🇮🇶 Uruk urbano e cidades-estado • 🇮🇳 Harappa inicial • 🇬🇧 megalitismo", proc: "Cidades-estado e hidráulica agrícola" },
-            { katun: 5,  arguelles: "JEMDET NASR", pesq: "🇪🇬 Djet/Uadji • 🇮🇶 Jemdet Nasr e Suméria • 🇮🇳 Harappa inicial • 🇨🇳 Liangzhu", proc: "Ofícios especializados e poder palacial" },
-            { katun: 6,  arguelles: "STONEHENGE I", pesq: "🇪🇬 Merneith • 🇮🇶 Kish/Ur antigas • 🇮🇳 Harappa inicial • 🇬🇧 Stonehenge I", proc: "Continuidade dinástica e arquitetura ritual" },
-            { katun: 7,  arguelles: "HARAPPA", pesq: "🇪🇬 Den • 🇮🇶 Kish amplia redes • 🇮🇳 Harappa inicial • 🇨🇳 Liangzhu", proc: "Administração central, escrita e tributos" },
-            { katun: 8,  arguelles: "CARAL MONUM.", pesq: "🇪🇬 Anedjib • 🇮🇶 Dinástico Arcaico • 🇮🇳 Harappa inicial • 🇵🇪 Caral monumental", proc: "Monumentalidade ritual e organização local" },
-            { katun: 9,  arguelles: "LONGSHAN", pesq: "🇪🇬 Semerkhet • 🇮🇶 cidades sumérias • 🇮🇳 Harappa inicial • 🇨🇳 Liangzhu/Longshan", proc: "Integração regional e crescimento urbano" },
-            { katun: 10, arguelles: "ELAM PRIMORDIAL", pesq: "🇪🇬 Qa'a e fim da I Dinastia • 🇮🇶 Suméria/Elam • 🇮🇳 Harappa inicial • 🇨🇳 Longshan", proc: "Transição política com continuidade institucional" },
-            { katun: 11, arguelles: "UR EXC.", pesq: "🇪🇬 Hotepsekhemwy/II Dinastia • 🇮🇶 Ur e Kish • 🇮🇳 Harappa inicial • 🇬🇧 Newgrange", proc: "Reorganização estatal e estabilidade" },
-            { katun: 12, arguelles: "TROIA I", pesq: "🇪🇬 II Dinastia consolidada • 🇮🇶 Ur/Kish • 🇮🇳 Harappa inicial • 🇬🇧 Newgrange • Troia I", proc: "Burocracia templária e diferenciação social" },
-            { katun: 13, arguelles: "CYCLADES", pesq: "🇪🇬 Raneb/Nebra e culto solar • 🇮🇶 Dinástico Arcaico • 🇮🇳 Harappa • Cíclades", proc: "Instituições políticas e rituais se firmam" },
-            { katun: 14, arguelles: "DYNASTIC I", pesq: "🇪🇬 Raneb/Rá • 🇮🇶 Dinástico Arcaico I • 🇮🇳 Harappa • 🇨🇳 Longshan", proc: "Autoridade real e religião estatal" },
-            { katun: 15, arguelles: "SANCAI", pesq: "🇪🇬 II Dinastia • 🇮🇶 cidades sumérias • 🇮🇳 Harappa • 🇨🇳 Longshan/Sancai • 🇬🇧 megalitos", proc: "Administração e comércio inter-regional" },
-            { katun: 16, arguelles: "MARI FOUND.", pesq: "🇪🇬 Nynetjer • 🇮🇶 Mari e Suméria • 🇮🇳 Harappa • 🇨🇳 Longshan", proc: "Especialização administrativa e territorial" },
-            { katun: 17, arguelles: "KISH DYNASTY", pesq: "🇪🇬 Nynetjer e províncias • 🇮🇶 Kish dinástico • 🇮🇳 Harappa • 🇨🇳 Longshan", proc: "Integração econômica e poder regional" },
-            { katun: 18, arguelles: "PIRÂMIDES", pesq: "🇪🇬 II Dinastia tardia • 🇮🇶 cidades sumérias • 🇮🇳 Harappa • 🇬🇧 Stonehenge megalítico", proc: "Instituições maduras e hierarquias sociais" },
-            { katun: 19, arguelles: "GIZÉ CONST.", pesq: "🇪🇬 Nynetjer tardio • 🇮🇶 Ur/Kish • 🇮🇳 Harappa • 🇨🇳 Longshan • 🇵🇪 Caral", proc: "Reorganização regional e crescimento político" },
-            { katun: 20, arguelles: "SNEFRU", pesq: "🇪🇬 II Dinastia madura • 🇮🇶 Suméria urbana • 🇮🇳 Harappa • 🇨🇳 Longshan", proc: "Administração madura e estabilidade estatal" },
-            { katun: 21, arguelles: "KHUFU", pesq: "🇪🇬 Peribsen/Seth • 🇮🇶 Ur e Lagash • 🇮🇳 Harappa • 🇨🇳 Longshan", proc: "Reformas políticas e ideologia real" },
-            { katun: 22, arguelles: "KHAFRE", pesq: "🇪🇬 Peribsen • 🇮🇶 cidades-estado sumérias • 🇮🇳 Harappa • 🇬🇧 megalitismo", proc: "Regionalização administrativa e províncias" },
-            { katun: 23, arguelles: "MENKAURE", pesq: "🇪🇬 Peribsen tardio • 🇮🇶 Lagash/Ur • 🇮🇳 Harappa • 🇨🇳 Longshan • 🇵🇪 Caral", proc: "Integração econômica e estabilidade" },
-            { katun: 24, arguelles: "FIFTH DYNASTY", pesq: "🇪🇬 Khasekhem reunifica • 🇮🇶 Dinástico Arcaico • 🇮🇳 Harappa • 🇨🇳 Longshan", proc: "Recentralização e reorganização política" },
-            { katun: 25, arguelles: "SAHURE", pesq: "🇪🇬 Khasekhemwy • 🇮🇶 Ur/Lagash • 🇮🇳 Harappa • 🇨🇳 Longshan • 🇵🇪 Caral", proc: "Pacificação e fortalecimento central" },
-            { katun: 26, arguelles: "NIUSERRE", pesq: "🇪🇬 fim da II Dinastia • 🇮🇶 Suméria dinástica • 🇮🇳 Harappa • 🇬🇧 Stonehenge", proc: "Transição para o Império Antigo" },
-            { katun: 27, arguelles: "UNAS TEXTS", pesq: "🇪🇬 Djoser/Saqqara • 🇮🇶 Dinástico Arcaico • 🇮🇳 Harappa inicial • 🇨🇳 Longshan • 🇵🇪 Caral", proc: "Arquitetura monumental em pedra" },
-            { katun: 28, arguelles: "SIXTH DYNASTY", pesq: "🇪🇬 complexo de Djoser • 🇮🇶 Ur/Lagash • 🇮🇳 Harappa • 🇨🇳 Longshan • 🇵🇪 Caral", proc: "Planejamento urbano e engenharia monumental" },
-            { katun: 29, arguelles: "PEPI I", pesq: "🇪🇬 Djoser tardio • 🇮🇶 cidades sumérias • 🇮🇳 Harappa • 🇬🇧 Stonehenge • 🇵🇪 Caral", proc: "Consolidação de obras públicas" },
-            { katun: 30, arguelles: "MERENRE", pesq: "🇪🇬 Sekhemkhet • 🇮🇶 Lagash/Ur • 🇮🇳 Harappa • 🇨🇳 Longshan • 🇵🇪 Caral", proc: "Continuidade da monumentalidade estatal" },
-            { katun: 31, arguelles: "PEPI II", pesq: "🇪🇬 Khaba/III Dinastia • 🇮🇶 Suméria arcaica • 🇮🇳 Harappa • 🇨🇳 Longshan", proc: "Ofícios especializados e crescimento econômico" },
-            { katun: 32, arguelles: "LAGASH", pesq: "🇪🇬 Huni e transição • 🇮🇶 Lagash floresce • 🇮🇳 Harappa • 🇨🇳 Longshan • 🇵🇪 Caral", proc: "Integração econômica e gestão estatal" },
-            { katun: 33, arguelles: "UMMA WARS", pesq: "🇪🇬 Snefru/Meidum • 🇮🇶 Lagash-Umma • 🇮🇳 Harappa • 🇨🇳 Longshan • 🇬🇧 megalitos", proc: "Expansão técnica e competição territorial" },
-            { katun: 34, arguelles: "URUKAGINA", pesq: "🇪🇬 Pirâmide Curvada • 🇮🇶 reformas de Urukagina • 🇮🇳 Harappa • 🇵🇪 Caral", proc: "Aperfeiçoamento construtivo e reformas cívicas" },
-            { katun: 35, arguelles: "LUGALZAGESI", pesq: "🇪🇬 Pirâmide Vermelha • 🇮🇶 Lugalzagesi/Uruk • 🇮🇳 Harappa • 🇨🇳 Longshan", proc: "Engenharia em pedra e unificações regionais" },
-            { katun: 36, arguelles: "SARGON AKKAD", pesq: "🇪🇬 Snefru tardio/Sinai • 🇮🇶 Sargon de Akkad • 🇮🇳 Harappa • 🇵🇪 Caral", proc: "Integração territorial e impérios emergentes" },
-            { katun: 37, arguelles: "NUR-ADAD", pesq: "🇪🇬 Quéops inicia Gizé • 🇮🇶 Akkad em expansão • 🇮🇳 Harappa • 🇨🇳 Longshan", proc: "Centralização e mobilização de recursos" },
-            { katun: 38, arguelles: "NARAM-SIN", pesq: "🇪🇬 Grande Pirâmide • 🇮🇶 Naram-Sin/Akkad • 🇮🇳 Harappa • 🇬🇧 Stonehenge", proc: "Apogeu monumental e poder imperial" },
-            { katun: 39, arguelles: "SHAR-KALI-SHARRI", pesq: "🇪🇬 Quéops consolidado • 🇮🇶 Shar-kali-sharri • 🇮🇳 Harappa • 🇨🇳 Longshan", proc: "Maturidade tecnológica e tensões imperiais" },
-            { katun: 40, arguelles: "GUTI PERIOD", pesq: "🇪🇬 Quéfren/Esfinge • 🇮🇶 período Guti • 🇮🇳 Harappa • 🇵🇪 Caral", proc: "Monumentalidade e fragmentação política" },
-            { katun: 41, arguelles: "GUDEA LAGASH", pesq: "🇪🇬 Quéfren tardio • 🇮🇶 Gudea de Lagash • 🇮🇳 Harappa • 🇨🇳 Longshan", proc: "Grandes obras e renascimento urbano" },
-            { katun: 42, arguelles: "UR-NAMMU", pesq: "🇪🇬 Miquerinos/Gizé • 🇮🇶 Ur-Nammu/Ur III • 🇮🇳 Harappa • 🇵🇪 Caral", proc: "Diversificação monumental e codificação estatal" },
-            { katun: 43, arguelles: "ZIGURATE UR", pesq: "🇪🇬 Shepseskaf • 🇮🇶 zigurate de Ur • 🇮🇳 Harappa • 🇨🇳 Longshan tardio", proc: "Transição administrativa e culto monumental" },
-            { katun: 44, arguelles: "SHULGI REIGN", pesq: "🇪🇬 Userkaf/Templo Solar • 🇮🇶 Shulgi e Ur III • 🇮🇳 Harappa • 🇵🇪 Caral", proc: "Reorganização religiosa e burocrática" },
-            { katun: 45, arguelles: "AMAR-SIN", pesq: "🇪🇬 Sahuré/Punt/Sinai • 🇮🇶 Amar-Sin • 🇮🇳 Harappa • 🇨🇳 Longshan", proc: "Comércio internacional e administração imperial" },
-            { katun: 46, arguelles: "SHU-SIN", pesq: "🇪🇬 Niuserré/Menkauhor • 🇮🇶 Shu-Sin/Ur III • 🇮🇳 Harappa • 🇵🇪 Caral", proc: "Consolidação religiosa e gestão estatal" },
-            { katun: 47, arguelles: "IBBI-SIN", pesq: "🇪🇬 Djedkaré reformas • 🇮🇶 Ibbi-Sin e crise de Ur • 🇮🇳 Harappa • 🇨🇳 Longshan", proc: "Reformas administrativas e crise central" },
-            { katun: 48, arguelles: "ISIN-LARSA", pesq: "🇪🇬 Djedkaré tardio • 🇮🇶 Isin-Larsa • 🇮🇳 Harappa maduro • 🇵🇪 Caral", proc: "Descentralização e elites regionais" },
-            { katun: 49, arguelles: "FIRST INTERMEDIATE", pesq: "🇪🇬 Unas/Textos das Pirâmides • 🇮🇶 Isin-Larsa • 🇮🇳 Harappa maduro • 🇬🇧 Stonehenge", proc: "Literatura religiosa e fragmentação política" },
-            { katun: 50, arguelles: "MENTUHOTEP II", pesq: "🇪🇬 Teti/Sexta Dinastia • 🇮🇶 Isin-Larsa • 🇮🇳 Harappa maduro • 🇨🇳 Longshan tardio", proc: "Continuidade institucional e nova dinastia" },
-            { katun: 51, arguelles: "MINOAN CRETE", pesq: "🇪🇬 Teti consolidado • 🇮🇶 Isin-Larsa • 🇮🇳 Harappa maduro • Creta minoica inicial", proc: "Burocracia provincial e redes marítimas" },
-            { katun: 52, arguelles: "SÍNTESE SOLAR", pesq: "🇪🇬 Pepi I inicia • 🇮🇶 Isin-Larsa • 🇮🇳 Harappa maduro • 🇨🇳 Longshan • 🇵🇪 Caral", proc: "Síntese multicivilizacional e urbanização" }
+            { katun: 1,  arguelles: "UNIFICAÇÃO", pesq: "EGY Estado faraônico inicial • MES escrita Uruk/Jemdet Nasr • IRN proto-Elam • MEG Newgrange/Stonehenge", proc: "Urbanização e escrita administrativa" },
+            { katun: 2,  arguelles: "NARMER", pesq: "EGY unificação dinástica • MES transição Uruk-Jemdet Nasr • IND aldeias Harappanas • CHN Liangzhu", proc: "Centralização estatal inicial" },
+            { katun: 3,  arguelles: "MEMPHIS FOUND.", pesq: "EGY Mênfis e burocracia real • MES cidades-templo sumérias • IRN Susa proto-Elamita • MEG megalitismo", proc: "Administração palacial e templária" },
+            { katun: 4,  arguelles: "URUK URBANO", pesq: "MES legado urbano de Uruk • EGY escrita régia • IRN redes proto-Elamitas • ANAT Troia I inicial", proc: "Cidades e redes inter-regionais" },
+            { katun: 5,  arguelles: "JEMDET NASR", pesq: "MES Jemdet Nasr e contabilidade • EGY elites dinásticas • IND Harappano inicial • CHN Liangzhu ritual", proc: "Padronização administrativa" },
+            { katun: 6,  arguelles: "STONEHENGE I", pesq: "MEG Stonehenge I/Newgrange • EGY tumbas reais • MES cidades arcaicas • IRN escrita proto-Elamita", proc: "Monumentos rituais e memória social" },
+            { katun: 7,  arguelles: "HARAPPA", pesq: "IND Harappano inicial em expansão • EGY tributação real • MES Kish/Ur arcaicas • CHN Liangzhu", proc: "Especialização produtiva regional" },
+            { katun: 8,  arguelles: "CARAL MONUM.", pesq: "CAR Norte Chico cerimonial • MES Dinástico Arcaico nascente • EGY culto funerário real • MEG recintos rituais", proc: "Arquitetura cerimonial complexa" },
+            { katun: 9,  arguelles: "LONGSHAN", pesq: "CHN Liangzhu e Longshan inicial • MES cidades sumérias • IND aldeias urbanizantes • EGY Estado dinástico", proc: "Estratificação social ampliada" },
+            { katun: 10, arguelles: "ELAM PRIMORDIAL", pesq: "IRN proto-Elam e Susa • MES Suméria arcaica • EGY transição I-II Dinastias • ANAT Troia I", proc: "Transições políticas com escrita" },
+            { katun: 11, arguelles: "UR EXC.", pesq: "MES Ur e Kish se consolidam • EGY II Dinastia • IND redes aldeãs do Indo • MEG megalitismo atlântico", proc: "Consolidação de centros regionais" },
+            { katun: 12, arguelles: "TROIA I", pesq: "ANAT Troia I fortificada • EGY administração templária • MES cidades-estado • CAU Kura-Araxes", proc: "Fortificações e hierarquias locais" },
+            { katun: 13, arguelles: "CYCLADES", pesq: "AEG Cíclades iniciais • MES templos urbanos • EGY culto solar nascente • CHN Liangzhu tardio", proc: "Integração ritual e marítima" },
+            { katun: 14, arguelles: "DYNASTIC I", pesq: "MES Dinástico Arcaico I • EGY II Dinastia • IND Harappano inicial • LEV cidades do Bronze Inicial", proc: "Institucionalização urbana" },
+            { katun: 15, arguelles: "SANCAI", pesq: "CHN Longshan em formação • MES cidades-templo • EGY províncias dinásticas • CAR centros cerimoniais", proc: "Culturas regionais complexas" },
+            { katun: 16, arguelles: "MARI FOUND.", pesq: "MES Mari no Eufrates • LEV Bronze Inicial urbano • EGY Estado provincial • IND redes do Indo", proc: "Corredores fluviais de intercâmbio" },
+            { katun: 17, arguelles: "KISH DYNASTY", pesq: "MES Kish e hegemonias locais • EGY gestão provincial • ANAT Troia I-II • IRN Elam arcaico", proc: "Competição entre centros urbanos" },
+            { katun: 18, arguelles: "PIRÂMIDES", pesq: "EGY bases do Império Antigo • MES templos e palácios • MEG Stonehenge ativo • CHN Longshan", proc: "Centralização ritual do poder" },
+            { katun: 19, arguelles: "GIZÉ CONST.", pesq: "EGY transição para obras estatais • MES Ur/Kish/Lagash • IND urbanização pré-madura • CAR monumentalidade", proc: "Mobilização coletiva de recursos" },
+            { katun: 20, arguelles: "SNEFRU", pesq: "EGY administração madura da II Dinastia • MES Dinástico Arcaico • LEV cidades muradas • CAU Kura-Araxes", proc: "Estado territorial e elites regionais" },
+            { katun: 21, arguelles: "KHUFU", pesq: "EGY tensões dinásticas e culto estatal • MES Ur/Lagash • IRN Elam arcaico • IND assentamentos planejados", proc: "Reorganização ideológica do poder" },
+            { katun: 22, arguelles: "KHAFRE", pesq: "MES cidades-estado autônomas • EGY regionalização da II Dinastia • CHN Longshan • ANAT Troia II", proc: "Autonomia provincial e urbanismo" },
+            { katun: 23, arguelles: "MENKAURE", pesq: "EGY reunificação em curso • MES Lagash e Ur • IND Harappano inicial tardio • CAR centros costeiros", proc: "Integração econômica regional" },
+            { katun: 24, arguelles: "FIFTH DYNASTY", pesq: "EGY reunificação final da II Dinastia • MES Dinástico Arcaico • LEV Bronze Inicial • CHN Longshan", proc: "Recentralização política" },
+            { katun: 25, arguelles: "SAHURE", pesq: "EGY Khasekhemwy e pacificação • MES cidades sumérias • IRN Susa/Elam • IND redes Harappanas", proc: "Pacificação e integração fiscal" },
+            { katun: 26, arguelles: "NIUSERRE", pesq: "EGY transição ao Império Antigo • MES Dinástico Arcaico II • MEG Stonehenge fases iniciais • ANAT Troia II", proc: "Preparação para monumentalização estatal" },
+            { katun: 27, arguelles: "UNAS TEXTS", pesq: "EGY Djoser/Saqqara • MES cidades-templo sumérias • CAR Caral em expansão • IND Harappano inicial", proc: "Monumentalização estatal em pedra" },
+            { katun: 28, arguelles: "SIXTH DYNASTY", pesq: "EGY complexo de Saqqara • MES Lagash/Ur • CHN Longshan maduro • LEV urbanismo do Bronze Inicial", proc: "Planejamento monumental e urbano" },
+            { katun: 29, arguelles: "PEPI I", pesq: "EGY III Dinastia consolidada • MES templos e escrita • MEG Stonehenge • CAR pirâmides-plataforma", proc: "Obras públicas e trabalho coordenado" },
+            { katun: 30, arguelles: "MERENRE", pesq: "EGY continuidade piramidal • MES Lagash/Umma • IND avanço para fase urbana • IRN Elam arcaico", proc: "Especialização técnica e artesanal" },
+            { katun: 31, arguelles: "PEPI II", pesq: "EGY administração da III Dinastia • MES cidades rivais • CHN Longshan tardio • CAU Kura-Araxes", proc: "Complexidade regional e ofícios" },
+            { katun: 32, arguelles: "LAGASH", pesq: "MES Lagash se destaca • EGY transição III-IV Dinastias • IND centros pré-urbanos • CAR Norte Chico", proc: "Gestão urbana e excedentes" },
+            { katun: 33, arguelles: "UMMA WARS", pesq: "MES conflitos Lagash-Umma • EGY pirâmides de Snefru • LEV cidades muradas • ANAT Troia II", proc: "Competição territorial organizada" },
+            { katun: 34, arguelles: "URUKAGINA", pesq: "MES reformas de Urukagina • EGY experimentação piramidal • IRN Elam • IND urbanização crescente", proc: "Reformas cívicas e inovação construtiva" },
+            { katun: 35, arguelles: "LUGALZAGESI", pesq: "MES Lugalzagesi unifica Suméria • EGY Pirâmide Vermelha • CHN Longshan • CAR centros monumentais", proc: "Unificação regional e engenharia avançada" },
+            { katun: 36, arguelles: "SARGON AKKAD", pesq: "MES Sargon e Império Acádio • EGY Snefru tardio • IND proto-urbanismo • LEV rotas comerciais", proc: "Expansão imperial e rotas de troca" },
+            { katun: 37, arguelles: "NUR-ADAD", pesq: "EGY Quéops e Gizé • MES Akkad integra Suméria • IRN Elam acádio • ANAT redes do Bronze Inicial", proc: "Centralização máxima de recursos" },
+            { katun: 38, arguelles: "NARAM-SIN", pesq: "MES Naram-Sin imperial • EGY Grande Pirâmide • IND Harappano rumo ao maduro • MEG Stonehenge", proc: "Apogeu monumental e imperial" },
+            { katun: 39, arguelles: "SHAR-KALI-SHARRI", pesq: "MES crise acádia tardia • EGY administração de Gizé • CHN Longshan tardio • IRN Elam autônomo", proc: "Tensões imperiais e resiliência estatal" },
+            { katun: 40, arguelles: "GUTI PERIOD", pesq: "MES período Guti e fragmentação • EGY Quéfren/Esfinge • CAR Norte Chico • IND urbanismo maduro", proc: "Fragmentação política e continuidade urbana" },
+            { katun: 41, arguelles: "GUDEA LAGASH", pesq: "MES Gudea e renascimento de Lagash • EGY Gizé tardia • CHN Longshan final • LEV cidades costeiras", proc: "Renascimento urbano e culto cívico" },
+            { katun: 42, arguelles: "UR-NAMMU", pesq: "MES Ur-Nammu funda Ur III • EGY Miquerinos • IND Harappa maduro • CAR centros costeiros", proc: "Codificação estatal e padronização" },
+            { katun: 43, arguelles: "ZIGURATE UR", pesq: "MES zigurate de Ur e Ur III • EGY fim da IV Dinastia • CHN Longshan-Xia inicial • IRN Elam", proc: "Culto monumental e burocracia" },
+            { katun: 44, arguelles: "SHULGI REIGN", pesq: "MES Shulgi centraliza Ur III • EGY templos solares iniciais • IND cidades Harappanas • CAR monumentalidade", proc: "Integração burocrática e religiosa" },
+            { katun: 45, arguelles: "AMAR-SIN", pesq: "MES Amar-Sin e administração Ur III • EGY expedições ao Sinai/Punt • IND comércio Harappano • LEV Ebla", proc: "Comércio de longa distância" },
+            { katun: 46, arguelles: "SHU-SIN", pesq: "MES Shu-Sin e muralhas de Ur III • EGY culto solar • IRN Elam pressiona Ur • IND padronização urbana", proc: "Defesa estatal e controle administrativo" },
+            { katun: 47, arguelles: "IBBI-SIN", pesq: "MES Ibbi-Sin e colapso de Ur III • EGY reformas provinciais • IND Harappa maduro • CHN Longshan final", proc: "Crise central e autonomia regional" },
+            { katun: 48, arguelles: "ISIN-LARSA", pesq: "MES Isin-Larsa após Ur III • EGY descentralização do Antigo Reino • CAR continuidade andina • LEV Amoritas", proc: "Estados regionais e descentralização" },
+            { katun: 49, arguelles: "FIRST INTERMEDIATE", pesq: "EGY Textos das Pirâmides e tensões provinciais • MES Isin-Larsa • IND Harappa maduro • MEG Stonehenge", proc: "Literatura sagrada e fragmentação" },
+            { katun: 50, arguelles: "MENTUHOTEP II", pesq: "EGY início da VI Dinastia • MES reinos de Isin e Larsa • CHN Longshan-Xia inicial • IND Harappa maduro", proc: "Reorganização dinástica e regional" },
+            { katun: 51, arguelles: "MINOAN CRETE", pesq: "AEG Creta minoica inicial • EGY burocracia provincial • MES Isin-Larsa • IND redes Harappanas", proc: "Redes marítimas e administração provincial" },
+            { katun: 52, arguelles: "SÍNTESE SOLAR", pesq: "EGY Pepi I e Estado provincial • MES Isin-Larsa • IND Harappa maduro • CAR Norte Chico • CHN transição Longshan-Xia", proc: "Síntese urbana multicivilizacional" }
         ];
 
         // ============================================================
