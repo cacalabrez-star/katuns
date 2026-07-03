@@ -155,10 +155,10 @@
         .celula-katun:nth-child(4n) { border-right: 1px solid #444; }
         
         /* CORES DAS ONDAS */
-        .celula-katun.onda-dragao { background: linear-gradient(180deg, #171211, #0d0b0a); border-left: 3px solid #8d3b36; }
-        .celula-katun.onda-mago { background: linear-gradient(180deg, #181716, #0d0d0c); border-left: 3px solid #bdb7aa; }
-        .celula-katun.onda-mao { background: linear-gradient(180deg, #11161a, #090d10); border-left: 3px solid #436f86; }
-        .celula-katun.onda-sol { background: linear-gradient(180deg, #19160d, #0d0b07); border-left: 3px solid #b79d52; }
+        .celula-katun.onda-dragao { background: linear-gradient(180deg, #240606, #130303); border-left: 4px solid #ff3434; }
+        .celula-katun.onda-mago { background: linear-gradient(180deg, #202020, #101010); border-left: 4px solid #f5f5f5; }
+        .celula-katun.onda-mao { background: linear-gradient(180deg, #061521, #030b12); border-left: 4px solid #00a6ff; }
+        .celula-katun.onda-sol { background: linear-gradient(180deg, #241f05, #131003); border-left: 4px solid #ffd400; }
         
         .katun-topo {
             display: flex;
@@ -168,19 +168,20 @@
             padding-bottom: 3px;
             margin-bottom: 5px;
         }
-        .celula-katun.onda-mago .katun-topo { border-bottom-color: #f5f5f5; }
-        .celula-katun.onda-mao .katun-topo { border-bottom-color: #3e6f91; }
-        .celula-katun.onda-sol .katun-topo { border-bottom-color: #c5a64a; }
+        .celula-katun.onda-dragao .katun-topo { border-bottom-color: rgba(255, 52, 52, 0.45); }
+        .celula-katun.onda-mago .katun-topo { border-bottom-color: rgba(245, 245, 245, 0.35); }
+        .celula-katun.onda-mao .katun-topo { border-bottom-color: rgba(0, 166, 255, 0.45); }
+        .celula-katun.onda-sol .katun-topo { border-bottom-color: rgba(255, 212, 0, 0.45); }
         
         .katun-id {
             font-weight: 700;
             font-size: 1.18rem;
             flex-shrink: 0;
         }
-        .celula-katun.onda-dragao .katun-id { color: #9f3430; }
+        .celula-katun.onda-dragao .katun-id { color: #ff3434; }
         .celula-katun.onda-mago .katun-id { color: #f5f5f5; }
-        .celula-katun.onda-mao .katun-id { color: #3e6f91; }
-        .celula-katun.onda-sol .katun-id { color: #c5a64a; }
+        .celula-katun.onda-mao .katun-id { color: #00a6ff; }
+        .celula-katun.onda-sol .katun-id { color: #ffd400; }
         
         .katun-arguelles {
             font-weight: 700;
@@ -189,10 +190,10 @@
             text-align: right;
             margin-left: 4px;
         }
-        .celula-katun.onda-dragao .katun-arguelles { color: #9f3430; }
+        .celula-katun.onda-dragao .katun-arguelles { color: #ff3434; }
         .celula-katun.onda-mago .katun-arguelles { color: #f5f5f5; }
-        .celula-katun.onda-mao .katun-arguelles { color: #3e6f91; }
-        .celula-katun.onda-sol .katun-arguelles { color: #c5a64a; }
+        .celula-katun.onda-mao .katun-arguelles { color: #00a6ff; }
+        .celula-katun.onda-sol .katun-arguelles { color: #ffd400; }
         
         .katun-pesquisa {
             font-size: 11px;
@@ -203,14 +204,32 @@
         }
         .katun-processo {
             font-size: 0.62rem;
-            color: #d6c48a;
             text-transform: uppercase;
             font-weight: 700;
             margin-top: auto;
             border-top: 1px solid #444;
             padding: 4px 5px 2px;
-            background: rgba(214, 196, 138, 0.07);
             letter-spacing: 0.45px;
+        }
+        .celula-katun.onda-dragao .katun-processo {
+            color: #ff3434;
+            border-top-color: rgba(255, 52, 52, 0.45);
+            background: rgba(255, 52, 52, 0.06);
+        }
+        .celula-katun.onda-mago .katun-processo {
+            color: #f5f5f5;
+            border-top-color: rgba(245, 245, 245, 0.35);
+            background: rgba(245, 245, 245, 0.05);
+        }
+        .celula-katun.onda-mao .katun-processo {
+            color: #00a6ff;
+            border-top-color: rgba(0, 166, 255, 0.45);
+            background: rgba(0, 166, 255, 0.06);
+        }
+        .celula-katun.onda-sol .katun-processo {
+            color: #ffd400;
+            border-top-color: rgba(255, 212, 0, 0.45);
+            background: rgba(255, 212, 0, 0.07);
         }
         #rodape {
             display: grid;
